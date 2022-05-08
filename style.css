@@ -1,0 +1,77 @@
+/*robot style*/
+@keyframes coloring{
+	0% {background-color: dodgerblue;}
+	20% {background-color: tomato}
+	40% {background-color: green}
+	60% {background-color: yellow}
+	80% {background-color: grey}
+	100% {background-color: purple}
+
+}
+.robot{
+	margin: 0 auto;
+	width: 400px;
+}
+.head, .body, .foot{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.head, .hand, .leg, .stomach{
+	background-color: dodgerblue;
+	transition: all 1s;
+	animation-name:coloring;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+.head{
+	width: 250px;
+	height: 180px;
+	border-radius: 150px 150px 0 0;
+	margin: 0 auto;
+}
+.head:hover{
+	width: 400px;
+}
+.eyes{
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin: 130px 50px;
+}
+.body{
+	margin-top: 10px;
+}
+.hand, .leg{
+	width: 50px;
+	height: 180px;
+	margin: 0 auto;
+	border-radius: 50px 50px; 
+}
+.stomach{
+	width: 250px;
+	height: 280px;
+	border-radius: 0 0 80px 80px;
+}
+.foot{
+	margin: -50px 110px;
+}
+.leg{
+	height: 130px;
+}
+.leg.left:hover{
+	transform: rotate(20deg);
+}
+.leg.right:hover{
+	transform: rotate(-20deg);
+}
+.hand.left:hover{
+	transform: rotate(90deg);
+}
+.hand.right:hover{
+	transform: rotate(-90deg);
+}
+.stomach:hover{
+	transform: scale(0.9);
+}
