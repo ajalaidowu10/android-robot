@@ -1,16 +1,13 @@
 /*robot style*/
-@keyframes coloring{
-	0% {background-color: dodgerblue;}
-	20% {background-color: tomato}
-	40% {background-color: green}
-	60% {background-color: yellow}
-	80% {background-color: grey}
-	100% {background-color: purple}
-
+.container{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	grid-gap: 10px;
 }
 .robot{
-	margin: 0 auto;
-	width: 400px;
+	width: 200px;
+	height: 300px;
 }
 .head, .body, .foot{
 	display: flex;
@@ -18,60 +15,148 @@
 	flex-wrap: wrap;
 }
 .head, .hand, .leg, .stomach{
-	background-color: dodgerblue;
 	transition: all 1s;
-	animation-name:coloring;
-	animation-duration: 10s;
-	animation-iteration-count: infinite;
 }
 .head{
-	width: 250px;
-	height: 180px;
+	width: 150px;
+	height: 80px;
 	border-radius: 150px 150px 0 0;
 	margin: 0 auto;
 }
-.head:hover{
-	width: 400px;
+.head:hover, .head.left{
+	width: 100%;
+}
+
+.turn.head-left{
+	flex-flow: row;
+	width: 100%;
+}
+
+.turn.head.right{
+	flex-flow: row-reverse;
+	width: 100%;
+}
+
+.small.head.front{
+	flex-flow: row;
+	width: 150px;
+}
+
+.small.head.front{
+	flex-flow: row;
+	width: 125px;
+}
+.big.head{
+	margin: 0 -25px;
+	width: 250px;
+}
+.angry.head{
+	width: 250px;
+	margin: 0 auto;
+}
+
+.move.head.left{
+	margin: 0 25px;
+	width: 100%;
 }
 .eyes{
-	width: 25px;
-	height: 25px;
+	width: 10px;
+	height: 10px;
 	border-radius: 50%;
-	background-color: #fff;
-	margin: 130px 50px;
+	background-color: white;
+	margin: 50px 30px;
 }
 .body{
-	margin-top: 10px;
+	margin-top: 3px;
 }
 .hand, .leg{
-	width: 50px;
-	height: 180px;
+	width: 20px;
+	height: 80px;
 	margin: 0 auto;
 	border-radius: 50px 50px; 
 }
 .stomach{
-	width: 250px;
-	height: 280px;
-	border-radius: 0 0 80px 80px;
+	width: 150px;
+	height: 150px;
+	border-radius: 0 0 70px 70px;
+	display: flex;
+	justify-content: center;
+	padding-top: 16px;
+	color: #fff;
+	font-weight: bolder;
+	font-size: 2em;
+	font-family: monospace;
 }
 .foot{
-	margin: -50px 110px;
+	margin: -30px 50px;
 }
-.leg{
-	height: 130px;
-}
-.leg.left:hover{
+.left.leg:hover, .left.leg.up{
 	transform: rotate(20deg);
 }
-.leg.right:hover{
+.leg.right:hover, .right.leg.up{
 	transform: rotate(-20deg);
 }
-.hand.left:hover{
+.left.hand:hover, .left.hand.up, .all.hand.up{
 	transform: rotate(90deg);
 }
-.hand.right:hover{
+.right.hand.up, .all.hand.up{
 	transform: rotate(-90deg);
 }
-.stomach:hover{
-	transform: scale(0.9);
+.left.hand.down, .right.hand.down, .all.hand.down, .right.leg.down, .left.leg.down,.all.leg.down{
+	transform: rotate(0deg);
+}
+.right.hand:hover, .right.hand.up{
+	transform: rotate(-90deg);
+}
+.talk.stomach{
+	animation-name:talking;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+.dodgerBlue .head, .dodgerBlue .hand, .dodgerBlue .leg, .dodgerBlue .stomach{
+	background-color: dodgerBlue;
+}
+.blue .head, .blue .hand, .blue .leg, .blue .stomach{
+	background-color: blue;
+}
+.red .head, .red .hand, .red .leg, .red .stomach{
+	background-color: red;
+}
+.black .head, .black .hand, .black .leg, .black .stomach{
+	background-color: black;
+}
+.green .head, .green .hand, .green .leg, .green .stomach{
+	background-color: green;
+}
+.tomato .head, .tomato .hand, .tomato .leg, .tomato .stomach{
+	background-color: tomato;
+}
+.yellow .head, .yellow .hand, .yellow .leg, .yellow .stomach{
+	background-color: yellow;
+}
+.purple .head, .purple .hand, .purple .leg, .purple .stomach{
+	background-color: purple;
+}
+.grey .head, .grey .hand, .grey .leg, .grey .stomach{
+	background-color: grey;
+}
+.orange .head, .orange .hand, .orange .leg, .orange .stomach{
+	background-color: orange;
+}
+.violet .head, .violet .hand, .violet .leg, .violet .stomach{
+	background-color: violet;
+}
+.slateBlue .head, .slateBlue .hand, .slateBlue .leg, .slateBlue .stomach{
+	background-color: slateBlue;
+}
+.mediumSeaGreen .head, .mediumSeaGreen .hand, .mediumSeaGreen .leg, .mediumSeaGreen .stomach{
+	background-color: mediumSeaGreen;
+}
+
+@keyframes talking{
+	0% {transform: scale(1)}
+	50% {transform: scale(0.9)}
+	100% {transform: scale(1)}
+
 }
