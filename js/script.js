@@ -245,7 +245,7 @@ bola.afterSomeSec()
 ade.afterSomeSec()
 		.then(he => he.stopTalk()
 		.then(he => he.turnHead('right')
-		.then(he => he.ledDown('left')
+		.then(he => he.legDown('left')
     .then(he => he.startTalk()
 ))));
 lara.afterSomeSec(100)
